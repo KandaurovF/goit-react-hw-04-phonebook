@@ -1,0 +1,47 @@
+.form__heading {
+  margin-bottom: 30px;
+}
+
+.label {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+
+span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 250ms linear, transform 250ms linear;
+}
+
+.input:focus + span,
+.input:not(:placeholder-shown) + span {
+  color: #000;
+  transform: translateY(-100%);
+}
+
+.input {
+  height: 24px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+  background-color: transparent;
+  color: #000;
+  outline: none;
+  transition: border-color 250ms linear;
+}
+
+.input:focus {
+  border-color: #000;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
