@@ -5,6 +5,9 @@ import Filter from './Filter';
 import IconButton from './IconButton';
 import Modal from './Modal';
 import { ImUserPlus } from 'react-icons/im';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -35,7 +38,8 @@ export const App = () => {
     );
 
     if (existingContact) {
-      alert('This contact already exists!');
+      // alert('This contact already exists!');
+      toast.warning('This contact already exists!');
     } else {
       setContacts(contacts => [formData, ...contacts]);
       toggleModal();
@@ -86,6 +90,7 @@ export const App = () => {
             onDeleteContact={deleteContact}
           />
         )}
+        <ToastContainer autoClose={3000} />
       </div>
     </div>
   );
