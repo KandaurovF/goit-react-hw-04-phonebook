@@ -18,7 +18,13 @@ const Filter = ({ value, onChange, contacts }) => {
 };
 
 Filter.propTypes = {
-  contacts: PropTypes.arrayOf(),
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
